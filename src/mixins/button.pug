@@ -1,0 +1,6 @@
+mixin btn(label, href, variant = 'primary')
+  a(class=['btn', `btn-${variant}`] href=href)&attributes(attributes)
+    if block
+      block
+    else
+      = label

@@ -1,8 +1,20 @@
 extends ../layouts/main
 
-block content
-    include ../data/navigation.pug
-    include ../components/header.pug
+append meta
+  meta(name='description' content='Keepsake is an independent design and branding studio. Explore our work, services and journal.')
 
-    main
-        h1 Keepsake
+block title
+  title Keepsake — Branding & Digital Agency
+
+block content
+  include ../components/icons.pug
+  include ../components/header.pug
+  include ../components/mobile-menu.pug
+  main
+    include ../components/hero.pug
+    include ../components/works.pug
+    include ../components/cta.pug
+    include ../components/services.pug
+    include ../components/clients.pug
+    include ../components/journal.pug
+  include ../components/footer.pug

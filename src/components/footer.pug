@@ -1,0 +1,34 @@
+footer.site-footer#footer
+  .container
+    .footer-top
+      .footer-links
+        each column in footerColumns
+          div
+            h2= column.title
+            each link in column.links
+              a(href=link.href)= link.label
+      .footer-subscribe
+        h2 Newsletter
+        p Fresh case studies and design notes, once a month.
+        form(action='#subscribe-success' method='get')
+          label(for='email') Email address
+          .subscribe-fields
+            input#email(name='email' type='email' placeholder='Your email address' autocomplete='email' aria-describedby='email-hint email-error' required)
+            button.btn.btn-primary(type='submit') Subscribe
+          small#email-error.form-error(role='alert') Please enter a valid email address.
+          label.consent
+            input(type='checkbox' name='consent' value='yes' required aria-describedby='consent-error')
+            |  I agree to receive occasional email updates.
+          small#consent-error.form-error(role='alert') Please agree to the privacy policy.
+          small#email-hint Enter a valid email address and check the consent box.
+        p.subscribe-success#subscribe-success(role='status')
+          | Thanks for subscribing! Your form passed validation. 
+          small This is a front-end demonstration; no email is sent.
+    .footer-bottom
+      p © 2026 Keepsake Studio. All rights reserved.
+      .socials
+        each social in socials
+          a(href=social.href aria-label=social.label)
+            +icon(social.icon)
+a.back-to-top(href='#top' aria-label='Back to top')
+  +icon('arrow')

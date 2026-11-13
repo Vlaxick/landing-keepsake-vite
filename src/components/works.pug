@@ -1,0 +1,16 @@
+section.section.works-section#works(aria-labelledby='works-title')
+  .container
+    h2.section-title#works-title Our awesome works
+    .portfolio
+      each category, i in categories
+        input.filter-input(type='radio' name='work-filter' id=`filter-${category.id}` checked=(i === 0))
+      input.show-more-check#show-more(type='checkbox')
+      .chips(role='group' aria-label='Filter projects by category')
+        each category in categories
+          label(for=`filter-${category.id}`)= category.label
+      .work-grid
+        each work in works
+          +work-card(work)
+      label.btn.btn-outline.load-more(for='show-more')
+        span.load-more-label Load more works
+        span.show-less-label Show fewer works

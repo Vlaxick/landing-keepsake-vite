@@ -1,0 +1,9 @@
+mixin work-card(work)
+  article.work-card(data-category=work.category)
+    a.work-card-link(href=`images/${work.image}.webp` target='_blank' rel='noopener' aria-label=`View ${work.title} artwork`)
+      +picture(work.image, work.alt, 358, 282)
+      div.work-overlay(aria-hidden='true')
+        span.work-plus +
+        h3.work-name= work.title
+        span.work-line
+        span.work-category= work.categoryLabel

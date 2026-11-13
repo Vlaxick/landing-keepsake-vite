@@ -1,0 +1,16 @@
+nav#mobile-menu(popover='auto' aria-label='Mobile navigation')
+  .mobile-menu-links
+    each item in navigation
+      a(href=item.href)= item.label
+  .mobile-menu-actions
+    a.btn.btn-primary(href='#contact') Contact us
+    +btn('', '#works', 'outline')
+      +icon('heart')
+      |  Favourites
+  .mobile-menu-bottom
+    p Let's make something beautiful.
+    a(href='mailto:hello@keepsake.example') hello@keepsake.example
+    .socials
+      each social in socials
+        a(href=social.href aria-label=social.label)
+          +icon(social.icon)

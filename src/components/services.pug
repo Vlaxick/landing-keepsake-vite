@@ -1,0 +1,19 @@
+section.section.services-section#services(aria-labelledby='services-title')
+  .container
+    h2.section-title#services-title What do we do
+    p.section-intro We are a small team of designers and makers who help brands look their best online and offline.
+    .services-grid
+      each service in services
+        article.service
+          span.service-icon
+            +icon(service.icon)
+          h3= service.title
+          p= service.description
+    .stats
+      each stat in stats
+        div
+          strong
+            | #{stat.value}
+            if stat.suffix
+              span= stat.suffix
+          span= stat.label

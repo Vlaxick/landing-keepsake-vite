@@ -1,7 +1,15 @@
-header.header
-    .container
-        nav.nav(aria-label="Main navigation")
-            ul.nav__list
-                each item in navigation
-                    li.nav__item
-                        a.nav__link(href=item.href)= item.label
+header.site-header
+  .container.header-inner
+    a.brand(href='#top' aria-label='Keepsake home')
+      span.brand-mark K
+      span.brand-name eepsake
+    nav.desktop-nav(aria-label='Main navigation')
+      each item, index in navigation
+        a(href=item.href class={active: index === 0} aria-current=(index === 0 ? 'page' : null))= item.label
+      a.favourite(href='#works' aria-label='View favourite works')
+        +icon('heart')
+    //-  Native HTML popover supports show/hide without any JavaScript. 
+    button.menu-toggle(type='button' popovertarget='mobile-menu' popovertargetaction='toggle' aria-controls='mobile-menu' aria-label='Toggle mobile navigation')
+      span
+      span
+      span

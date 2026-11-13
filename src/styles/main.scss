@@ -1,13 +1,6 @@
-@use 'base' as *;
-
-:root {
-  --color-background: #ffffff;
-  --color-text: #222222;
-}
-
-body {
-  margin: 0;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-family: Arial, sans-serif;
-}
+@use "base-original";
+@use "header-original";
+@use "portfolio-original";
+@use "sections-original";
+@use "footer-original";
+@use "responsive-original";

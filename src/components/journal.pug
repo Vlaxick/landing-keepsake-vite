@@ -1,0 +1,15 @@
+section.section.journal-section#journal(aria-labelledby='journal-title')
+  .container
+    h2.section-title#journal-title From the journal
+    p.section-intro Notes on process, case studies and things that inspire us.
+    .journal-grid
+      each entry in journal
+        article.journal-card
+          +picture(entry.image, entry.alt, 150, 150)
+          div
+            p.journal-meta= entry.meta
+            h3= entry.title
+            p= entry.description
+            a(href='#contact')
+              | Read more
+              span(aria-hidden='true') →
