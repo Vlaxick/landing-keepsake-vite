@@ -15,12 +15,20 @@ for (const file of (await readdir(sourceDir)).sort()) {
   const sizes = [...new Set([Math.ceil(width / 2), width])];
   for (const size of sizes) {
     const image = () => sharp(source).resize({ width: size, withoutEnlargement: true });
-    await image().avif({ quality: 75 }).toFile(join(outputDir, `${name}-${size}.avif`));
-    await image().webp({ quality: 82 }).toFile(join(outputDir, `${name}-${size}.webp`));
+    await image()
+      .avif({ quality: 75 })
+      .toFile(join(outputDir, `${name}-${size}.avif`));
+    await image()
+      .webp({ quality: 82 })
+      .toFile(join(outputDir, `${name}-${size}.webp`));
     if (hasAlpha) {
-      await image().png().toFile(join(outputDir, `${name}-${size}.png`));
+      await image()
+        .png()
+        .toFile(join(outputDir, `${name}-${size}.png`));
     } else {
-      await image().jpeg({ quality: 82, mozjpeg: true }).toFile(join(outputDir, `${name}-${size}.jpg`));
+      await image()
+        .jpeg({ quality: 82, mozjpeg: true })
+        .toFile(join(outputDir, `${name}-${size}.jpg`));
     }
   }
   console.log(`${file}: ${sizes.join(' / ')} px`);

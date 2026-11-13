@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .desktop-nav {
   display: none;
@@ -10,6 +10,7 @@
     align-items: center;
     gap: 24px;
   }
+
   .desktop-nav > a:not(.favourite) {
     color: var(--color-text-dark);
     font: 400 13px var(--font-heading);
@@ -17,10 +18,12 @@
     text-transform: uppercase;
     white-space: nowrap;
   }
+
   .desktop-nav > a:not(.favourite):hover,
   .desktop-nav > a.active {
     color: var(--color-accent);
   }
+
   .desktop-nav .favourite {
     display: grid;
     place-items: center;
@@ -29,14 +32,16 @@
     background: var(--color-accent);
     color: var(--color-white);
   }
+
   .desktop-nav .favourite:hover {
     background: var(--color-accent-hover);
   }
+
   .favourite svg {
     width: 16px;
     height: 16px;
     fill: none;
-    stroke: currentColor;
+    stroke: currentcolor;
     stroke-width: 1.7;
   }
 }

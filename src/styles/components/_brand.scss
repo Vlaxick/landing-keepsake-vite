@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .brand {
   display: inline-flex;
@@ -13,11 +13,21 @@
   overflow: visible;
   font: 700 26px var(--font-logo);
 
-  &__circle { fill: var(--color-footer); }
-  &__initial { fill: var(--color-white); }
-  &__name { fill: currentColor; }
+  &__circle {
+    fill: var(--color-footer);
+  }
+
+  &__initial {
+    fill: var(--color-white);
+  }
+
+  &__name {
+    fill: currentcolor;
+  }
 }
 
 @include mq(md) {
-  .brand-logo { width: 112px; }
+  .brand-logo {
+    width: 112px;
+  }
 }

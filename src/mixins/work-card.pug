@@ -1,8 +1,13 @@
 mixin work-card(work)
   article.work-card(data-category=work.category)
-    a.work-card__link(href=`images/${work.image}.webp` target='_blank' rel='noopener' aria-label=`View ${work.title} artwork`)
+    a.work-card__link(
+      href=`images/${work.image}.webp`,
+      target='_blank',
+      rel='noopener',
+      aria-label=`View ${work.title} artwork`
+    )
       +picture(work.image, work.alt, 358, 282)
-      div.work-card__overlay(aria-hidden='true')
+      .work-card__overlay(aria-hidden='true')
         span.work-card__plus +
         h3.work-card__name= work.title
         span.work-card__line

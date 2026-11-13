@@ -1,8 +1,25 @@
 mixin picture(name, alt, width, height, lazy = true, fallback = 'jpg')
-  - const small = Math.ceil(width / 2)
-  - const imageDir = '/src/assets/images/generated'
-  - const sizes = name.startsWith('work-') ? '(min-width: 1280px) 358px, (min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 150px, 96px'
+  - const small = Math.ceil(width / 2);
+  - const imageDir = '/src/assets/images/generated';
+  - const sizes = name.startsWith('work-') ? '(min-width: 1280px) 358px, (min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 150px, 96px';
   picture
-    source(type='image/avif' srcset=`${imageDir}/${name}-${small}.avif ${small}w, ${imageDir}/${name}-${width}.avif ${width}w` sizes=sizes)
-    source(type='image/webp' srcset=`${imageDir}/${name}-${small}.webp ${small}w, ${imageDir}/${name}-${width}.webp ${width}w` sizes=sizes)
-    img(src=`${imageDir}/${name}-${width}.${fallback}` srcset=`${imageDir}/${name}-${small}.${fallback} ${small}w, ${imageDir}/${name}-${width}.${fallback} ${width}w` sizes=sizes width=width height=height alt=alt decoding='async' loading=(lazy ? 'lazy' : null))
+    source(
+      type='image/avif',
+      srcset=`${imageDir}/${name}-${small}.avif ${small}w, ${imageDir}/${name}-${width}.avif ${width}w`,
+      sizes=sizes
+    )
+    source(
+      type='image/webp',
+      srcset=`${imageDir}/${name}-${small}.webp ${small}w, ${imageDir}/${name}-${width}.webp ${width}w`,
+      sizes=sizes
+    )
+    img(
+      src=`${imageDir}/${name}-${width}.${fallback}`,
+      srcset=`${imageDir}/${name}-${small}.${fallback} ${small}w, ${imageDir}/${name}-${width}.${fallback} ${width}w`,
+      sizes=sizes,
+      width=width,
+      height=height,
+      alt=alt,
+      decoding='async',
+      loading=lazy ? 'lazy' : null
+    )

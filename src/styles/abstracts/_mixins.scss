@@ -1,17 +1,21 @@
-@use "sass:map";
-@use "tokens" as *;
+@use 'sass:map';
+@use 'tokens' as *;
+
 @mixin mq($point) {
   @if not map.has-key($breakpoints, $point) {
     @error 'Unknown breakpoint: #{$point}';
   }
+
   @media (min-width: map.get($breakpoints, $point)) {
     @content;
   }
 }
+
 @mixin focus-ring($color: var(--color-teal)) {
   outline: 3px solid $color;
   outline-offset: 4px;
 }
+
 @mixin visually-hidden {
   position: absolute;
   width: 1px;

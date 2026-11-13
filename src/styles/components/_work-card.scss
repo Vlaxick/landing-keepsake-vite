@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .work-card {
   position: relative;
@@ -98,11 +98,13 @@
   .work-card {
     aspect-ratio: 357.33 / 282;
   }
+
   .work-card:nth-child(6),
   .work-card:nth-child(7),
   .work-card:nth-child(8) {
     display: block;
   }
+
   .work-card:nth-child(9) {
     display: none;
   }

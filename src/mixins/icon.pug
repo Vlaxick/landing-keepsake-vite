@@ -1,21 +1,56 @@
 mixin icon(name)
   case name
     when 'web'
-      svg(aria-hidden='true' focusable='false' width='42' height='30' viewBox='0 0 42 30' fill='none' xmlns='http://www.w3.org/2000/svg')
-        rect(x='2' y='2' width='38' height='26' fill='#C9DCE8')
-        rect(x='2' y='2' width='38' height='26' stroke='#5F6B78' stroke-width='4')
-        rect(width='14' height='10' transform='translate(8 8)' fill='#7BC67E')
+      svg(
+        aria-hidden='true',
+        focusable='false',
+        width='42',
+        height='30',
+        viewBox='0 0 42 30',
+        fill='none',
+        xmlns='http://www.w3.org/2000/svg'
+      )
+        rect(x='2', y='2', width='38', height='26', fill='#C9DCE8')
+        rect(x='2', y='2', width='38', height='26', stroke='#5F6B78', stroke-width='4')
+        rect(width='14', height='10', transform='translate(8 8)', fill='#7BC67E')
     when 'motion'
-      svg(aria-hidden='true' focusable='false' width='40' height='32' viewBox='0 0 40 32' fill='none' xmlns='http://www.w3.org/2000/svg')
-        rect(width='40' height='32' rx='6' fill='#5F6B78')
-        rect(x='7' y='6' width='26' height='20' rx='3' fill='#9EC5E0')
+      svg(
+        aria-hidden='true',
+        focusable='false',
+        width='40',
+        height='32',
+        viewBox='0 0 40 32',
+        fill='none',
+        xmlns='http://www.w3.org/2000/svg'
+      )
+        rect(width='40', height='32', rx='6', fill='#5F6B78')
+        rect(x='7', y='6', width='26', height='20', rx='3', fill='#9EC5E0')
     when 'print'
-      svg(aria-hidden='true' focusable='false' width='42' height='34' viewBox='0 0 42 34' fill='none' xmlns='http://www.w3.org/2000/svg')
-        rect(width='22' height='20' transform='translate(10)' fill='#F4C542')
-        rect(y='16' width='42' height='18' rx='3' fill='#7A8590')
+      svg(
+        aria-hidden='true',
+        focusable='false',
+        width='42',
+        height='34',
+        viewBox='0 0 42 34',
+        fill='none',
+        xmlns='http://www.w3.org/2000/svg'
+      )
+        rect(width='22', height='20', transform='translate(10)', fill='#F4C542')
+        rect(y='16', width='42', height='18', rx='3', fill='#7A8590')
     when 'illustration'
-      svg(aria-hidden='true' focusable='false' width='34' height='31' viewBox='0 0 34 31' fill='none' xmlns='http://www.w3.org/2000/svg')
-        path(d='M17 30.6L14.535 28.39C5.78 20.57 0 15.47 0 9.35C0 4.25 4.08 0 9.35 0C12.24 0 15.13 1.36 17 3.57C18.87 1.36 21.76 0 24.65 0C29.92 0 34 4.25 34 9.35C34 15.47 28.22 20.57 19.465 28.39L17 30.6Z' fill='#F95858')
+      svg(
+        aria-hidden='true',
+        focusable='false',
+        width='34',
+        height='31',
+        viewBox='0 0 34 31',
+        fill='none',
+        xmlns='http://www.w3.org/2000/svg'
+      )
+        path(
+          d='M17 30.6L14.535 28.39C5.78 20.57 0 15.47 0 9.35C0 4.25 4.08 0 9.35 0C12.24 0 15.13 1.36 17 3.57C18.87 1.36 21.76 0 24.65 0C29.92 0 34 4.25 34 9.35C34 15.47 28.22 20.57 19.465 28.39L17 30.6Z',
+          fill='#F95858'
+        )
     default
-      svg(aria-hidden='true' focusable='false')
+      svg(aria-hidden='true', focusable='false')
         use(href=`#i-${name}`)

@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 .back-to-top {
   position: fixed;
@@ -22,7 +22,7 @@
   width: 22px;
   height: 22px;
   fill: none;
-  stroke: currentColor;
+  stroke: currentcolor;
   stroke-width: 2;
 }
 
