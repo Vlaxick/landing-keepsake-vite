@@ -3,6 +3,7 @@ import pug from '@vituum/vite-plugin-pug'
 import path from 'path'
 
 export default {
+    build: { assetsInlineLimit: 0 },
     plugins: [
         vituum({
             imports: {
