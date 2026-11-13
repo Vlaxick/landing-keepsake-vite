@@ -1,0 +1,7 @@
+header.header
+    .container
+        nav.nav(aria-label="Main navigation")
+            ul.nav__list
+                each item in navigation
+                    li.nav__item
+                        a.nav__link(href=item.href)= item.label
