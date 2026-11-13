@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+
+.mobile-menu {
+  position: fixed;
+  inset: var(--header-height) 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100dvh - var(--header-height));
+  max-height: calc(100dvh - var(--header-height));
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  padding: 20px;
+  overflow-y: auto;
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  box-shadow: 0 14px 25px var(--color-shadow);
+}
+
+.mobile-menu:not(:popover-open) {
+  display: none;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-links a {
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--color-border);
+  font: 400 16px var(--font-heading);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.mobile-menu-links a:hover {
+  color: var(--color-accent);
+}
+
+.mobile-menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mobile-menu-bottom {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-menu-bottom p {
+  margin-bottom: 5px;
+}
+
+.mobile-menu-bottom > a {
+  color: var(--color-accent);
+}
+
+.mobile-menu-bottom .socials {
+  margin-top: 15px;
+}
+
+@include mq(md) {
+  .mobile-menu {
+    display: none;
+  }
+}

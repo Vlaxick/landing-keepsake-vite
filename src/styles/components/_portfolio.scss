@@ -1,0 +1,92 @@
+@use "../abstracts" as *;
+
+.filter-input,
+.show-more-check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.filter-input:focus-visible ~ .chips label,
+.show-more-check:focus-visible ~ .load-more {
+  outline: 0;
+}
+
+.filter-input--all:focus-visible ~ .chips label[for="filter-all"],
+.filter-input--branding:focus-visible ~ .chips label[for="filter-branding"],
+.filter-input--identity:focus-visible ~ .chips label[for="filter-identity"],
+.filter-input--print:focus-visible ~ .chips label[for="filter-print"],
+.filter-input--web:focus-visible ~ .chips label[for="filter-web"],
+.filter-input--motion:focus-visible ~ .chips label[for="filter-motion"],
+.show-more-check:focus-visible ~ .load-more {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 3px;
+}
+
+.filter-input--all:checked ~ .chips label[for="filter-all"],
+.filter-input--branding:checked ~ .chips label[for="filter-branding"],
+.filter-input--identity:checked ~ .chips label[for="filter-identity"],
+.filter-input--print:checked ~ .chips label[for="filter-print"],
+.filter-input--web:checked ~ .chips label[for="filter-web"],
+.filter-input--motion:checked ~ .chips label[for="filter-motion"] {
+  color: var(--color-white);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.filter-input--branding:checked
+  ~ .work-grid
+  .work-card:not([data-category="branding"]),
+.filter-input--identity:checked
+  ~ .work-grid
+  .work-card:not([data-category="identity"]),
+.filter-input--print:checked
+  ~ .work-grid
+  .work-card:not([data-category="print"]),
+.filter-input--web:checked ~ .work-grid .work-card:not([data-category="web"]),
+.filter-input--motion:checked
+  ~ .work-grid
+  .work-card:not([data-category="motion"]) {
+  display: none;
+}
+
+.show-more-check:checked ~ .work-grid .work-card {
+  display: block;
+}
+
+.filter-input--branding:checked
+  ~ .work-grid
+  .work-card:not([data-category="branding"]),
+.filter-input--identity:checked
+  ~ .work-grid
+  .work-card:not([data-category="identity"]),
+.filter-input--print:checked
+  ~ .work-grid
+  .work-card:not([data-category="print"]),
+.filter-input--web:checked ~ .work-grid .work-card:not([data-category="web"]),
+.filter-input--motion:checked
+  ~ .work-grid
+  .work-card:not([data-category="motion"]) {
+  display: none;
+}
+
+.filter-input--branding:checked
+  ~ .work-grid
+  .work-card[data-category="branding"],
+.filter-input--identity:checked
+  ~ .work-grid
+  .work-card[data-category="identity"],
+.filter-input--print:checked ~ .work-grid .work-card[data-category="print"],
+.filter-input--web:checked ~ .work-grid .work-card[data-category="web"],
+.filter-input--motion:checked ~ .work-grid .work-card[data-category="motion"] {
+  display: block;
+}
+
+.show-more-check:checked ~ .load-more .load-more-label {
+  display: none;
+}
+
+.show-more-check:checked ~ .load-more .show-less-label {
+  display: inline;
+}

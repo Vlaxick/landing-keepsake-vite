@@ -1,0 +1,10 @@
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn,
+  .chips label,
+  .work-card__overlay {
+    transition-duration: 0.01ms;
+  }
+}

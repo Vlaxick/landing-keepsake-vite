@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+@include mq(md) {
+  .works-section > .container {
+    position: relative;
+  }
+  .works-section .chips {
+    justify-content: flex-end;
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+  .works-section .section-title {
+    margin-bottom: 8px;
+  }
+}
+
+@include mq(lg) {
+  .works-section .chips {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .works-section .work-grid {
+    margin-top: 26px;
+  }
+}

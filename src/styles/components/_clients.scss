@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 16px;
+  padding-block: 20px 35px;
+  align-items: center;
+  text-align: center;
+}
+
+.client-logos span {
+  color: var(--color-client-text);
+  font: 700 21px var(--font-heading);
+  letter-spacing: 0.6px;
+}
+
+.client-logos span:nth-child(2),
+.client-logos span:nth-child(4) {
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+@include mq(md) {
+  .client-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@include mq(lg) {
+  .client-logos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.client-logos span {
+  color: var(--color-client-muted);
+  font-weight: 400;
+}
+
+.client-logos span:nth-child(2) {
+  font-family: Georgia, serif;
+  font-style: normal;
+}
+
+.client-logos span:nth-child(4) {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.client-logos span:nth-child(5) {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}

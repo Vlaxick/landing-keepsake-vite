@@ -1,0 +1,115 @@
+@use "../abstracts" as *;
+
+.work-card {
+  position: relative;
+  aspect-ratio: 357.33 / 258;
+  overflow: hidden;
+  background: var(--color-bg-light);
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-card {
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+.work-card {
+  &__link:focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: -3px;
+  }
+}
+
+.work-card {
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--color-overlay);
+    color: var(--color-white);
+    opacity: 0;
+    transition: opacity 0.2s;
+    text-align: center;
+    pointer-events: none;
+  }
+}
+
+.work-card:hover .work-card__overlay,
+.work-card:focus-within .work-card__overlay {
+  opacity: 1;
+}
+
+.work-card {
+  &__plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    color: var(--color-white);
+    font: 300 30px/1 var(--font-body);
+  }
+}
+
+.work-card {
+  &__name {
+    font: 400 16px/1.3 var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.work-card {
+  &__line {
+    width: 16px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+}
+
+.work-card {
+  &__category {
+    font: 400 12px/1.4 var(--font-body);
+    color: var(--color-teal);
+  }
+}
+
+.work-card:nth-child(n + 6) {
+  display: none;
+}
+
+@include mq(md) {
+  .work-card {
+    aspect-ratio: 357.33 / 282;
+  }
+  .work-card:nth-child(6),
+  .work-card:nth-child(7),
+  .work-card:nth-child(8) {
+    display: block;
+  }
+  .work-card:nth-child(9) {
+    display: none;
+  }
+}
+
+@include mq(lg) {
+  .work-card:nth-child(9) {
+    display: block;
+  }
+}

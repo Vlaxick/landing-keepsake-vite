@@ -1,9 +1,9 @@
-nav#mobile-menu(popover='auto' aria-label='Mobile navigation')
+nav.mobile-menu#mobile-menu(popover='auto' aria-label='Mobile navigation')
   .mobile-menu-links
     each item in navigation
       a(href=item.href)= item.label
   .mobile-menu-actions
-    a.btn.btn-primary(href='#contact') Contact us
+    a.btn.btn--primary(href='#contact') Contact us
     +btn('', '#works', 'outline')
       +icon('heart')
       |  Favourites

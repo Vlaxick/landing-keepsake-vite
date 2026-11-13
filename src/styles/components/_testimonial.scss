@@ -1,0 +1,98 @@
+@use "../abstracts" as *;
+
+.testimonial {
+  padding: 30px 18px;
+  background: var(--color-bg-light);
+  text-align: center;
+}
+
+.quote-mark {
+  display: block;
+  height: 42px;
+  color: var(--color-accent);
+  font:
+    700 66px/1 Georgia,
+    serif;
+}
+
+.testimonial blockquote {
+  max-width: 790px;
+  margin: 6px auto 26px;
+  color: var(--color-text-dark);
+  font: 300 16px/1.6 var(--font-body);
+}
+
+.testimonial figcaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background: var(--color-teal);
+  font-weight: 700;
+}
+
+.testimonial figcaption strong {
+  display: block;
+  color: var(--color-text-dark);
+  font-size: 12px;
+}
+
+.testimonial figcaption small {
+  display: block;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.slider-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--color-muted);
+}
+
+.slider-dots .selected {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial .slider-dots {
+  order: 1;
+}
+
+@include mq(md) {
+  .testimonial {
+    padding: 36px 30px;
+  }
+
+  .testimonial blockquote {
+    font-size: 19px;
+  }
+}
+
+@include mq(lg) {
+  .testimonial blockquote {
+    font-size: 22px;
+  }
+}

@@ -13,14 +13,14 @@ footer.site-footer#footer
         form(action='#subscribe-success' method='get')
           label(for='email') Email address
           .subscribe-fields
-            input#email(name='email' type='email' placeholder='Your email address' autocomplete='email' aria-describedby='email-hint email-error' required)
-            button.btn.btn-primary(type='submit') Subscribe
-          small#email-error.form-error(role='alert') Please enter a valid email address.
+            input.email-input#email(name='email' type='email' placeholder='Your email address' autocomplete='email' aria-describedby='email-hint email-error' required)
+            button.btn.btn--primary(type='submit') Subscribe
+          small.email-error#email-error.form-error(role='alert') Please enter a valid email address.
           label.consent
             input(type='checkbox' name='consent' value='yes' required aria-describedby='consent-error')
             |  I agree to receive occasional email updates.
-          small#consent-error.form-error(role='alert') Please agree to the privacy policy.
-          small#email-hint Enter a valid email address and check the consent box.
+          small.consent-error#consent-error.form-error(role='alert') Please agree to the privacy policy.
+          small.email-hint#email-hint Enter a valid email address and check the consent box.
         p.subscribe-success#subscribe-success(role='status')
           | Thanks for subscribing! Your form passed validation. 
           small This is a front-end demonstration; no email is sent.

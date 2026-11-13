@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.load-more {
+  display: flex;
+  width: max-content;
+  margin: 30px auto 0;
+  cursor: pointer;
+}
+
+.show-less-label {
+  display: none;
+}

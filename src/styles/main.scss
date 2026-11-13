@@ -1,6 +1,3 @@
-@use "base-original";
-@use "header-original";
-@use "portfolio-original";
-@use "sections-original";
-@use "footer-original";
-@use "responsive-original";
+@use "base";
+@use "layout";
+@use "components";
