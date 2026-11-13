@@ -189,3 +189,16 @@ body {
 | [Vituum](https://vituum.dev/) | Плагін для шаблонізаторів |
 | [@vituum/vite-plugin-pug](https://www.npmjs.com/package/@vituum/vite-plugin-pug) | Підтримка Pug |
 | [Sass](https://sass-lang.com/) | Препроцесор стилів |
+
+## PostCSS та підтримувані браузери (лабораторна №9, завдання 4)
+
+Vite компілює SCSS, передає CSS плагіну Autoprefixer через `postcss.config.js`, а під час production-збірки мініфікує результат. Цільові браузери визначає `.browserslistrc`: останні дві версії Chrome, Firefox, Edge, Safari та iOS Safari.
+
+```bash
+npx browserslist
+npx autoprefixer --info
+npm run dev
+npm run build
+```
+
+У режимі розробки для фільтрів портфоліо в DevTools можна побачити `-webkit-user-select`, який Autoprefixer додає до `user-select`. Префікси залежать від цільових браузерів: наприклад, Safari їх потребує для цієї властивості, а останні версії Chrome — ні. Мініфікований CSS після збірки знаходиться у `dist/assets/`.

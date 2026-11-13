@@ -19,6 +19,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+  user-select: none;
   transition:
     color 0.2s,
     border-color 0.2s,
